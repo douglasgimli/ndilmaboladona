@@ -1,0 +1,32 @@
+{
+  "name": "nDilma Boladona",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "This extension changes all your images browser to our great PRESIDENTA DILMA",
+  "homepage_url": "http://douglasdasilva.com.br",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "contentSettings",
+    "http://*/*, https://*//*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "src/images/*.jpg",
+    "src/images/*.gif"
+  ]
+}
